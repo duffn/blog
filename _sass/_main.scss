@@ -23,6 +23,7 @@ body {
   margin: 0;
   padding: 5px;
 }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -32,6 +33,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .post-container {
   display: flex;
   flex-direction: row;
@@ -74,6 +76,7 @@ body {
   color: var(--primary-font-color);
   font-weight: 600;
 }
+
 .post-list .post-date {
   width: 20%;
   text-align: right;
@@ -99,9 +102,11 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
+
 .post-header .post-date {
   font-weight: 600;
 }
+
 .post-header .post-share a {
   display: flex;
 }
@@ -125,6 +130,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .tag {
   background: var(--bg-color);
   padding: 5px 10px;
@@ -145,6 +151,7 @@ body {
   background: var(--bg-color);
   border: 1px dashed var(--border-color);
 }
+
 .navigation .prev {
   width: 45%;
   overflow: hidden;
@@ -154,6 +161,7 @@ body {
   font-weight: 600;
   padding: 5px 10px;
 }
+
 .navigation .next {
   width: 45%;
   color: var(--primary-font-color);
@@ -176,10 +184,12 @@ body {
   margin-bottom: 5px;
   background: var(--bg-color);
 }
+
 .pagination .prev {
   color: var(--primary-font-color);
   font-weight: 600;
 }
+
 .pagination .next {
   color: var(--primary-font-color);
   font-weight: 600;
@@ -207,18 +217,22 @@ body {
   padding: 5px 10px;
   margin-bottom: 20px;
 }
+
 .profile-image-container {
   width: 40%;
 }
+
 .profile-image {
   width: 128px;
   height: 128px;
   border-radius: 50%;
   transition: transform 0.2s;
 }
+
 .profile-image:hover {
   transform: scale(1.05);
 }
+
 .profile-about {
   width: 100%;
   text-align: right;
@@ -227,15 +241,19 @@ body {
 .profile-about a {
   text-decoration: none;
 }
+
 .font-2 {
   font-size: 2rem;
 }
+
 .font-1-5 {
   font-size: 1.5rem;
 }
+
 .font-1-2 {
   font-size: 1.2rem;
 }
+
 .font-0-8 {
   font-size: 0.8rem;
 }
@@ -243,6 +261,7 @@ body {
 .text-right {
   text-align: right;
 }
+
 .w-100 {
   width: 100% !important;
 }
@@ -250,22 +269,27 @@ body {
 a:hover {
   text-decoration: none;
 }
+
 a {
   color: var(--primary-font-color);
   text-decoration: underline;
 }
+
 img {
   max-width: 100%;
 }
+
 figure {
   margin: 0;
   padding: 15px;
 }
+
 pre {
   font-size: 14px;
   max-width: 90vw;
   overflow: auto;
 }
+
 .social-icon {
   height: 24px;
 }
@@ -289,6 +313,7 @@ pre {
     max-width: 960px;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .container {
     width: 100%;
@@ -310,6 +335,7 @@ pre {
   filter: invert(100%) sepia(50%) saturate(0%) hue-rotate(360deg)
     brightness(100%) contrast(100%);
 }
+
 .mode {
   float: right;
   position: relative;
@@ -320,6 +346,7 @@ pre {
   border-radius: 20px;
   cursor: pointer;
 }
+
 .mode:after {
   content: "☀️";
   position: absolute;
@@ -331,16 +358,20 @@ pre {
   text-align: center;
   transition: all 0.3s ease;
 }
+
 .mode.active {
   background: #0771ca;
 }
+
 .mode.active:after {
   content: "🌛";
   transform: translateX(20px);
 }
+
 .mode.active span {
   transform: translateX(0);
 }
+
 .mode span {
   position: absolute;
   z-index: 1;

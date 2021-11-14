@@ -1,11 +1,11 @@
 site: pipefail.dev
 title: pipefail.dev
-keywords: blog
+keywords: blog, python, go, node.js, cloud, data, aws, gcp, kubernetes, docker
 description: >-
-  My Blog
+  pipefail.dev
 lang: en-US
 timezone: America/Denver
-repo: https://github.com/duffn/duffn.github.io
+repo: https://github.com/duffn/blog
 google_analytics: UA-60982925-6
 
 author:
@@ -23,6 +23,9 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+sass:
+  style: compressed
 
 exclude:
   - .jekyll-cache
