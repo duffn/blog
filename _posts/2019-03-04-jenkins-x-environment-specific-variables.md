@@ -97,47 +97,51 @@ Finally, in charts/jx-environment-variables/templates/deployment.yaml, we'll uti
 the variables that we setup. If our values.yaml contains `branchName`, we'll display
 that in our app, otherwise we'll get the `env` section that we created above.
 
+{% raw %}
+
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ '{{' }} template "fullname" . }}
+  name: {{ template "fullname" . }}
   labels:
-    draft: {{ '{{' }} default "draft-app" .Values.draft }}
-    chart: "{{ '{{' }} .Chart.Name }}-{{ '{{' }} .Chart.Version | replace "+" "_" }}"
+    draft: {{ default "draft-app" .Values.draft }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:
-  replicas: {{ '{{' }} .Values.replicaCount }}
+  replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
-        draft: {{ '{{' }} default "draft-app" .Values.draft }}
-        app: {{ '{{' }} template "fullname" . }}
-{{ '{{' }}- if .Values.podAnnotations }}
+        draft: {{ default "draft-app" .Values.draft }}
+        app: {{ template "fullname" . }}
+{{- if .Values.podAnnotations }}
       annotations:
-{{ '{{' }} toYaml .Values.podAnnotations | indent 8 }}
-{{ '{{' }}- end }}
+{{ toYaml .Values.podAnnotations | indent 8 }}
+{{- end }}
     spec:
       containers:
-      - name: {{ '{{' }} .Chart.Name }}
-        image: "{{ '{{' }} .Values.image.repository }}:{{ '{{' }} .Values.image.tag }}"
-        imagePullPolicy: {{ '{{' }} .Values.image.pullPolicy }}
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - containerPort: {{ '{{' }} .Values.service.internalPort }}
-{{ '{{' }}/*
+        - containerPort: {{ .Values.service.internalPort }}
+{{/*
 Here's the section we added.
 */}}
-{{ '{{' }}- if .Values.env }}
+{{- if .Values.env }}
         env:
-{{ '{{' }}- if .Values.branchName }}
+{{- if .Values.branchName }}
           - name: BRANCH_NAME
-            value: {{ '{{' }} .Values.branchName | quote }}
-{{ '{{' }}- else }}
-{{ '{{' }} toYaml .Values.env | indent 10 }}
-{{ '{{' }}- end }}
-{{ '{{' }}- end }}
+            value: {{ .Values.branchName | quote }}
+{{- else }}
+{{ toYaml .Values.env | indent 10 }}
+{{- end }}
+{{- end }}
         resources:
-{{ '{{' }} toYaml .Values.resources | indent 12 }}
+{{ toYaml .Values.resources | indent 12 }}
 ```
+
+{% endraw %}
 
 When we build a PR, we can see that we'll have `PR-XX` output by our app and
 when we build staging, we'll see `master`. It works!
