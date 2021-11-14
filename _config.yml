@@ -1,0 +1,70 @@
+# Site settings
+site: pipefail.dev
+title: pipefail.dev
+keywords: blog
+description: >-
+  My Blog
+lang: en-US
+timezone: America/Denver
+repo: https://github.com/duffn/duffn.github.io
+google_analytics: UA-60982925-6
+
+author:
+  name: duffn
+  bio: I write about Python, Go, Node.js,<br />cloud infrastructure, and data.
+  picture: assets/images/gopher_avatar.png
+  github: duffn
+  twitter: duffn
+
+url: "https://pipefail.dev"
+baseurl: ""
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-relative-links
+paginate: 20
+paginate_path: "/page/:num"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:slug
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled: true
+  collections: false
