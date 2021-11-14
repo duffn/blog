@@ -170,7 +170,7 @@ Click add, select your credentials from the Credentials dropdown on the main con
 
 Now that we're all set with Bitbucket, let's tell Jenkins what to do with our project.
 
-In the Build Triggers section, select _Poll SCM_ and add _/1 _ \* \* \*. Jenkins will ask you if you're sure you want to check the repository every minute. Adjust as you see fit.
+In the Build Triggers section, select _Poll SCM_ and add `*/1 * * * *`. Jenkins will ask you if you're sure you want to check the repository every minute. Adjust as you see fit.
 
 ![jenkins trigger](/assets/images/2015-03-22-jenkins-loopback-bitbucket/jenkins_trigger.png)
 
