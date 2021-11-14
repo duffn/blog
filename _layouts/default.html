@@ -1,9 +1,8 @@
 {% include header.html %}
 <div class="container">
 	<div class="profile">
-		<a href="{{ site.url }}{{ site.baseurl }}"><img src="{{site.author.picture}}" class="profile-image" alt="Profile picture"></a>
 		<div class="profile-about">
-			<h2 style="margin-bottom: 0; font-weight: 700;">{{site.author.name}}</h2>
+			<a href="{{ site.url }}{{ site.baseurl }}"><h2 style="margin-bottom: 0; font-weight: 700;">{{site.title}}</h2></a>
 			{% if site.author.facebook %}
 				<a href="https://facebook.com/{{site.author.facebook}}" target="_blank"><img src="/assets/images/icon/facebook.svg" class="social-icon" alt="Facebook"></a>
 			{% endif %}

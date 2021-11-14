@@ -220,10 +220,13 @@ body {
   transform: scale(1.05);
 }
 .profile-about {
-  width: 60%;
+  width: 100%;
   text-align: right;
 }
 
+.profile-about a {
+  text-decoration: none;
+}
 .font-2 {
   font-size: 2rem;
 }
