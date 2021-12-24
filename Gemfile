@@ -1,9 +1,10 @@
-source "https://rubygems.org"
-gem 'jekyll'
-gem 'jekyll-paginate'
-gem 'jekyll-sitemap'
-gem 'jekyll-minifier'
-gem "tzinfo-data", "~> 1.2021"
+source 'https://rubygems.org'
+
+gem 'jekyll', '~> 4.2', '>= 4.2.1'
+gem 'jekyll-paginate', '~> 1.1'
+gem 'jekyll-sitemap', '~> 1.4'
+gem 'jekyll-minifier', '~> 0.1.10'
+gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.5'
 
 # update ruby version
-gem 'webrick'
+gem 'webrick', '~> 1.7'
