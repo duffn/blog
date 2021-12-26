@@ -80,4 +80,4 @@ class CreateSlackInstallationsTable extends Migration
 }
 ```
 
-That's all for now, but it should give you a start. [Watch here](https://pipefail.dev/atom.xml) for more Laravel Slack bog related posts in the future!
+That's all for now, but it should give you a start. [Watch here](https://pipefail.dev/atom.xml) for more Laravel Slack blog related posts in the future!
