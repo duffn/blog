@@ -80,4 +80,15 @@ class CreateSlackInstallationsTable extends Migration
 }
 ```
 
+If you're encrypting your tokens (which you should!), you should make those fields the `text` type so as they don't overflow the 255 character limit for a default `string`.
+
+Consider using the nice and simple package [`Crudly/Encrypted`](https://github.com/Crudly/Encrypted) for automatically encrypting and decrypting these fields.
+
+```php
+$table->text('bot_token')->nullable();
+$table->text('bot_refresh_token')->nullable();
+$table->text('user_token')->nullable();
+$table->text('user_refresh_token')->nullable();
+```
+
 That's all for now, but it should give you a start. [Watch here](https://pipefail.dev/atom.xml) for more Laravel Slack blog related posts in the future!
