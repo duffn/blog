@@ -32,7 +32,6 @@ After what is probably an embarassingly long amount of time debugging, I finally
 My `.buildpacks` file.
 
 ```
-https://github.com/lstoll/heroku-buildpack-monorepo
 https://github.com/heroku/heroku-buildpack-nodejs
 https://github.com/heroku/heroku-buildpack-php
 ```
