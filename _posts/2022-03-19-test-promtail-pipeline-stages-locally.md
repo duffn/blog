@@ -104,4 +104,4 @@ We can see that Promtail extracted the `request_path` from our JSON log lines an
 
 ## Conclusion
 
-So, with a little setup and a carefull crafted Promtail configuration, you can test your pipeline stages locally and feel confident that your production setup will work as expected.
+So, with a little setup and a carefully crafted Promtail configuration, you can test your pipeline stages locally and feel confident that your production setup will work as expected.
