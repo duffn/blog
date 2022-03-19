@@ -4,7 +4,7 @@ date: 2022-03-19T00:00:00+00:00
 author: duffn
 layout: post
 permalink: /test-promtail-pipeline-stages-locally/
-description: "Test your Promtail pipelines locally on your machine before deploying"
+description: "Test your Promtail pipelines locally on your machine before deploying."
 categories: laravel
 tags: [promtail, logging, grafana, loki]
 ---
