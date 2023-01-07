@@ -40,4 +40,4 @@ See it?
 
 Based upon the order of my buildpacks, Dokku is running the Node.js buildpack first before the php buildpack. That means that when my deployment process is running `npm run build`, the directory that contains the `laravel-livewire-tables` Blade templates isn't even there yet! I need to run the php buildpack first so those dependencies are installed before running `npm run build`, otherwise there are no templates there to reference. 🤦
 
-So, if you have enouncter a case where you're deploying to Heroku or Dokku and Tailwind seemingly is purging vendor styles that it shouldn't, make sure you're installing those dependencies first!
+So, if you have encountered a case where you're deploying to Heroku or Dokku and Tailwind seemingly is purging vendor styles that it shouldn't, make sure you're installing those dependencies first!
