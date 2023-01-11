@@ -1,18 +1,19 @@
 site: duffn.github.io
 title: duffn.github.io
-keywords: blog, python, go, node.js, cloud, data, aws, gcp, kubernetes, docker
+keywords: blog, python, go, node.js, ruby, cloud, data, aws, gcp, kubernetes, docker
 description: >-
   duffn.github.io
 lang: en-US
 timezone: America/Denver
-repo: https://github.com/duffn/blog
+repo: https://github.com/duffn/duffn.github.io
 google_analytics: UA-60982925-6
 
 author:
   name: duffn
-  bio: I write about Python, Go, Node.js,<br />cloud infrastructure, and data.
+  bio: I write about Python, Go, Node.js, Ruby,<br />cloud infrastructure, and data.
   picture: assets/images/gopher_avatar.png
   github: duffn
+  mastodon: https://fosstodon.org/@duffn
 
 url: "https://duffn.github.io"
 baseurl: ""
