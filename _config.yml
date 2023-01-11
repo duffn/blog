@@ -1,11 +1,11 @@
-site: duffn.github.io
-title: duffn.github.io
+site: pipefail.dev
+title: pipefail.dev
 keywords: blog, python, go, node.js, ruby, cloud, data, aws, gcp, kubernetes, docker
 description: >-
-  duffn.github.io
+  pipefail.dev
 lang: en-US
 timezone: America/Denver
-repo: https://github.com/duffn/duffn.github.io
+repo: https://github.com/duffn/pipefail.dev
 google_analytics: UA-60982925-6
 
 author:
@@ -15,7 +15,7 @@ author:
   github: duffn
   mastodon: https://fosstodon.org/@duffn
 
-url: "https://duffn.github.io"
+url: "https://pipefail.dev"
 baseurl: ""
 permalink: pretty
 
