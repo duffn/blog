@@ -1,5 +1,5 @@
-site: pipefail.dev
-title: pipefail.dev
+site: duffn.dev
+title: duffn.dev
 keywords: blog, python, go, node.js, ruby, cloud, data, aws, gcp, kubernetes, docker
 description: >-
   Posts about python, Go, Node.js, Ruby, cloud infrastructure, and data.
@@ -15,7 +15,7 @@ author:
   github: duffn
   mastodon: https://fosstodon.org/@duffn
 
-url: "https://pipefail.dev"
+url: "https://duffn.dev"
 baseurl: ""
 permalink: pretty
 
