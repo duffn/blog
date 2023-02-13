@@ -30,7 +30,7 @@
 					src="/assets/images/icon/linkedin.svg" class="social-icon" alt="LinkedIn"></a>
 			{% endif %}
 			{% if site.author.mastodon %}
-			<a href="{{site.author.mastodon}}" target="_blank"><img src="/assets/images/icon/mastodon.svg"
+			<a rel="me" href="{{site.author.mastodon}}" target="_blank"><img src="/assets/images/icon/mastodon.svg"
 					class="social-icon" alt="Mastodon"></a>
 			{% endif %}
 			<a href="/about/"><img src="/assets/images/icon/me.svg" class="social-icon" alt="About me"></a>
@@ -44,8 +44,9 @@
 	</div>
 	{{ content }}
 	<div class="footer">
-		<span>Made with <font color="red">♥</font> on Earth, a minimalist Jekyll Theme by <a
-				href="https://hakan.io"><b>Hakan</b></a></span>
+		<span>
+			Copyright &copy; {{ 'now' | date: "%Y" }} <a href="https://github.com/duffn">duffn</a>
+		</span>
 	</div>
 </div>
 {% include footer.html %}
