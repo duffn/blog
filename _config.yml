@@ -1,5 +1,6 @@
 site: duffn.dev
 title: duffn.dev
+header: duffn
 keywords: blog, python, go, node.js, ruby, cloud, data, aws, gcp, kubernetes, docker
 description: >-
   Posts about python, Go, Node.js, Ruby, cloud infrastructure, and data.
