@@ -1,3 +1,4 @@
+const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -33,7 +34,13 @@ module.exports = function (eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(pluginBundle);
+	eleventyConfig.addPlugin(pluginBundle, {
+		transforms: [
+			async function (content) {
+				return new CleanCSS({}).minify(content).styles;
+			},
+		],
+	});
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
