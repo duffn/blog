@@ -1,0 +1,17 @@
+<meta name="generator" content="Eleventy">
+<meta name="description" content="{{ description or metadata.description }}">
+<meta property="og:site_name" content="{{ metadata.title }}">
+<meta property="og:type" content="{% if title %}article{% else %}website{% endif %}" />
+<meta property="og:url" content="{{ metadata.url }}{{ permalink }}" />
+<meta property="og:title" content="{% if title %}{{ title }} - {{ metadata.title }}{% else %}{{ metadata.title }}{% endif %}" />
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
+<meta property="og:image" content="{{ metadata.url }}/{% if image %}{{ image }}{% else %}img/android-chrome-512x512.png{% endif %}" />
+<meta name="keywords" content="{% if tags %}{{ tags | join(",") }}{% else %}{{ metadata.keywords }}{% endif %}">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{% if title %}{{ title }} - {{ metadata.title }}{% else %}{{ metadata.title }}{% endif %}" />
+<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
+<meta name="twitter:image" content="{{ metadata.url }}/{% if image %}{{ image }}{% else %}img/android-chrome-512x512.png{% endif %}" />
+{%- if date %}
+<meta property="article:published_time" content="{{ date | xmlDateString }}" >
+<meta property="article:author" content="{{ metadata.url }}/about/">
+{% endif %}
