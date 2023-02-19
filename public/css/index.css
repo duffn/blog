@@ -140,9 +140,6 @@ pre:not([class*="language-"]) {
 	word-spacing: normal;
 	word-break: normal;
 }
-code {
-	word-break: break-all;
-}
 
 /* Header */
 header {
