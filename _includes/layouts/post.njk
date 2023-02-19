@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+---
+{%- css %}
+/* Only include the syntax highlighter CSS on blog posts */
+{% include "node_modules/prismjs/themes/prism-okaidia.css" %}
+{% include "public/css/prism-diff.css" %}
+{%- endcss %}
+<h1>{{ title }}</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+	{%- for tag in tags | filterTagList %}
+	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+	{%- endfor %}
+</ul>
+
+<div class="post-share">
+	Share:&nbsp;
+	<a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={{ metadata.url }}{{ permalink }}"
+		target="_blank"><img src="/img/icons/facebook.svg" class="social-icon"></a>
+	<a rel="noopener"
+		href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer={{ metadata.url }}{{ permalink }}&amp;text={{ title }} - {{ metadata.url }}{{ permalink }}"
+		target="_blank"><img src="/img/icons/twitter.svg" class="social-icon"></a>
+	<a rel="noopener" href="https://api.whatsapp.com/send?text={{ metadata.url }}{{ permalink }}" target="_blank"><img
+			src="/img/icons/whatsapp.svg" class="social-icon"></a>
+	</div>
+</div>
+
+{{ content | safe }}
+
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<ul class="links-nextprev">
+	{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+	{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+</ul>
+{%- endif %}
+{%- endif %}
