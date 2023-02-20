@@ -88,4 +88,4 @@ $table->text('user_token')->nullable();
 $table->text('user_refresh_token')->nullable();
 ```
 
-That's all for now, but it should give you a start. [Watch here](https://duffn.dev/atom.xml) for more Laravel Slack blog related posts in the future!
+That's all for now, but it should give you a start. [Watch here](https://duffn.dev/feed/feed.xml) for more Laravel Slack blog related posts in the future!
