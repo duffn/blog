@@ -283,3 +283,7 @@ h2 + .header-anchor {
 .post-share a {
 	display: flex;
 }
+
+.social-icon {
+	height: 36px;
+}
