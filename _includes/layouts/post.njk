@@ -28,7 +28,9 @@ layout: layouts/base.njk
 	</div>
 </div>
 
-{{ content | safe }}
+<article data-pagefind-body>
+	{{ content | safe }}
+</article>
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}

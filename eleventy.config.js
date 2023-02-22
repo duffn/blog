@@ -1,3 +1,4 @@
+const { execSync } = require("child_process");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
 const { DateTime } = require("luxon");
@@ -91,6 +92,11 @@ module.exports = function (eleventyConfig) {
 		);
 	});
 
+	eleventyConfig.addFilter("bustCache", (url) => {
+		const buildEpoch = Date.now();
+		return `${url}?${buildEpoch}`;
+	});
+
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", (mdLib) => {
 		mdLib.use(markdownItAnchor, {
@@ -120,6 +126,12 @@ module.exports = function (eleventyConfig) {
 		}
 
 		return content;
+	});
+
+	eleventyConfig.on("eleventy.after", () => {
+		execSync(`npx pagefind --source _site --glob \"**/*.html\"`, {
+			encoding: "utf-8",
+		});
 	});
 
 	// Features to make your build faster (when you need them)
