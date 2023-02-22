@@ -16,7 +16,7 @@
 
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
-		<link rel="shortcut icon" href="/img/favicon.ico" />
+		<link rel="shortcut icon" href="{{ "/img/favicon.ico" | bustCache }}" />
 
 		{% include "meta.njk" %}
 
@@ -58,9 +58,6 @@
 		<main id="skip">
 			{{ content | safe }}
 		</main>
-
-		<footer></footer>
-
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>
