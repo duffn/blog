@@ -1,7 +1,7 @@
 ---
 title: "Debugging a Varnish VMOD with gdb"
 date: 2025-01-30T00:00:00+00:00
-permalink: /debugging-varnish-vmod-with-gdb
+permalink: /debugging-varnish-vmod-with-gdb/
 description: "Debug your custom Varnish VMOD with gdb"
 tags: [varnish, vmod, gdb, debugging]
 ---
