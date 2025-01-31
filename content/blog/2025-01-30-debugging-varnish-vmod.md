@@ -10,7 +10,7 @@ tags: [varnish, vmod, gdb, debugging]
 
 Proper debugging is essential for any application and not just your standalone applications. You can, and should, also debug your shared libraries like your custom Varnish VMOD.
 
-We'll walk through a few steps to debug your Varnish VMOD with gdb in Docker.
+Here are a few steps to debug your Varnish VMOD with gdb in Docker, with one tip that may save you a lot of headache.
 
 # Setup
 
@@ -38,9 +38,13 @@ Here we set some CFLAGS that are helpful for debugging, enabling debug symbols a
 
 This next tip is especially necessary as otherwise `gdb` won't be able to find the symbols for your VMOD. You have to ensure that it knows to look in `/var/lib/varnish/varnishd/vmod_cache` for your VMOD. Varnish will cache the VMODs that it will use in this directory.
 
-❗️Don't tell `gdb` to look in the original VMOD directory were all the `.so` files are located! You must instruct it to use the `vmod_cache` director as the search path for shared objects.
+❗️Don't tell `gdb` to look in the original VMOD directory were all the `.so` files are located! You must instruct it to use the `vmod_cache` directory as the search path for shared objects.
 
-You can either do this after launching `gdb` or by including a `.gdbinit` file as shown in the repository example.
+You can either do this after launching `gdb` or by including a `.gdbinit` file as shown in the repository example. In either instance you must set the shared library search path to the `vmod_cache`.
+
+```bash
+set solib-search-path /var/lib/varnish/varnishd/vmod_cache
+```
 
 - Exec into the Varnish container.
 
@@ -79,4 +83,4 @@ Thread 101 "cache-worker" hit Breakpoint 1, vmod_modifyparams (ctx=0xffff855cd9b
 
 # Conclusion
 
-Once you know where Varnish caches the VMOD symbols, the rest is easy. But make sure you tell `gdb` where to search for your VMOD symbols! After that, you can debug to your heart's content.
+Once you know where Varnish caches the VMOD symbols, the rest is easy. But make sure you tell `gdb` where to search for your VMOD symbols! After that, you can debug your custom VMOD with `gdb`!
